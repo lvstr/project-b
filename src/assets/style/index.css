@@ -1,0 +1,94 @@
+@import url("hover.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #1e212d;
+  @apply text-gray-100;
+}
+@layer components {
+  .sm-nav {
+    @apply transition duration-100 ease-in-out hover:bg-gray-600  hover:text-gray-100 lg:hover:bg-transparent px-5 lg:py-5;
+  }
+
+  .sm-nav a {
+    @apply transition duration-100 ease-in-out lg:text-2xl text-gray-100 lg:text-gray-100   mx-auto inset-0;
+  }
+
+  .sm-nav .icon-wrapper {
+    @apply block mx-auto mb-1 transition duration-100 ease-in-out text-gray-100    text-center;
+  }
+}
+
+@layer utilities {
+  .stretched-link {
+    @apply absolute inset-0 z-10 cursor-pointer;
+  }
+}
+
+* a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+@media (min-width: 1024px) {
+  .hover-underline {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    overflow: hidden;
+  }
+  .hover-underline:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    @apply bg-gray-600;
+    height: 4px;
+    -webkit-transition-property: right;
+    transition-property: right;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+  .hover-underline:hover:before,
+  .hover-underline:focus:before,
+  .hover-underline:active:before {
+    right: 0;
+  }
+}
+
+.Nav {
+  position: fixed;
+  z-index: 2;
+}
+.Nav__teal {
+  z-index: 2;
+  background: #99f3bd;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .navbar ul li a {
+    transition: 500ms;
+    color: #f6f7d4;
+    transition: 500ms;
+  }
+  .navbar ul li a:hover {
+    transition: 500ms;
+    color: #f6f7d4 !important;
+    transition: 500ms;
+  }
+  .navbar .logo {
+    transition: 500ms;
+    color: #f6f7d4;
+    transition: 500ms;
+  }
+}

@@ -1,7 +1,7 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
+  //purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   presets: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
@@ -18,12 +18,12 @@ module.exports = {
 
       black: colors.black,
       white: colors.white,
-      gray: colors.coolGray,
+      gray: { ...colors.coolGray, 100: "#f6f7d4" },
       red: colors.red,
-      yellow: colors.amber,
-      green: colors.emerald,
-      blue: colors.blue,
-      indigo: colors.indigo,
+      yellow: { ...colors.amber, 600: "#d49d42" },
+      green: { ...colors.emerald, 400: "#21C7DF" },
+      blue: { ...colors.blue, 600: "#2098D1" },
+      indigo: { ...colors.indigo, 900: "#202040" },
       purple: colors.violet,
       pink: colors.pink,
     },
@@ -730,6 +730,7 @@ module.exports = {
       30: "30",
       40: "40",
       50: "50",
+      "-5": "-5",
     },
   },
   variantOrder: [
@@ -749,6 +750,9 @@ module.exports = {
     "disabled",
   ],
   variants: {
+    extend: {
+      opacity: ["disabled"],
+    },
     accessibility: ["responsive", "focus-within", "focus"],
     alignContent: ["responsive"],
     alignItems: ["responsive"],
