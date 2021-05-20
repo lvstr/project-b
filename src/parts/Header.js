@@ -1,22 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from "react";
+import React from "react";
 import Logo from "../assets/images/hero/header.jpg";
-import { dom } from "@fortawesome/fontawesome-svg-core";
 import Button from "../components/Button";
 import Navbar from "../components/Navbar";
 
 export default function Header() {
-  const [navbar, setNavbar] = useState(false);
-
-  const changeNavbar = () => {
-    if (window.scrollY >= 1) {
-      setNavbar(true);
-    } else {
-      setNavbar(false);
-    }
-  };
-
-  window.addEventListener("scroll", changeNavbar);
   return (
     <div>
       <div>
@@ -47,21 +35,21 @@ export default function Header() {
             <div className="w-11/12 mt-3 mx-auto">
               <hr className="border-gray-100 " />
               <div id="category" className="mt-3 flex gap-2">
-                <button class="bg-white bg-opacity-25 text-gray-100 py-1 px-1 rounded  leading-none flex items-center">
-                  <span class="inline-flex items-center justify-center px-2 text-xs font-light leading-none text-gray-100 bg-gray-200 bg-opacity-25 rounded">
+                <Button className="bg-white bg-opacity-25 text-gray-100 py-1 px-1 rounded  leading-none flex items-center border-none">
+                  <span className="inline-flex items-center justify-center px-2 text-xs font-light leading-none text-gray-100 bg-gray-200 bg-opacity-25 rounded">
                     Hardcore
                   </span>
-                </button>
-                <button class="bg-white bg-opacity-25 text-gray-100 py-1 px-1 rounded  leading-none flex items-center">
-                  <span class="inline-flex items-center justify-center px-2 text-xs font-light leading-none text-gray-100 bg-gray-200 bg-opacity-25 rounded">
+                </Button>
+                <Button className="bg-white bg-opacity-25 text-gray-100 py-1 px-1 rounded  leading-none flex items-center ">
+                  <span className="inline-flex items-center justify-center px-2 text-xs font-light leading-none text-gray-100 bg-gray-200 bg-opacity-25 rounded ">
                     Adventure
                   </span>
-                </button>
-                <button class="bg-white bg-opacity-25 text-gray-100 py-1 px-1 rounded  leading-none flex items-center">
-                  <span class="inline-flex items-center justify-center px-2 text-xs font-light leading-none text-gray-100 bg-gray-200 bg-opacity-25 rounded">
+                </Button>
+                <Button className="bg-white bg-opacity-25 text-gray-100 py-1 px-1 rounded  leading-none flex items-center">
+                  <span className="inline-flex items-center justify-center px-2 text-xs font-light leading-none text-gray-100 bg-gray-200 bg-opacity-25 rounded">
                     Sultan
                   </span>
-                </button>
+                </Button>
               </div>
             </div>
           </section>
